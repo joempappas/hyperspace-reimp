@@ -6,6 +6,20 @@
 
 [![DOI](https://zenodo.org/badge/113602572.svg)](https://zenodo.org/badge/latestdoi/113602572)
 
+
+# Joe's Directions:
+I used conda (I've grown to hate conda, but I don't have time to set anything else up. Don't judge me.)
+conda create environment, I used python 3.9
+
+Notes:
+Their original example uses the boston housing dataset. I switched to the california housing dataset.
+
+Steps:
+pip install . (mpi4py might fail. I installed with conda install mpi4py after that.)
+pip install -U scikit-learn
+
+
+
 ### Welcome to HyperSpace!
 
 If you have a complicated model with many hyperparameters, there is a lot to explore here.

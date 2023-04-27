@@ -8,18 +8,22 @@ mpirun -n 4 python example.py --results_dir results/skopt/space4
 * Note: we use 4 processes in this example (hence -n 4 above) since we have 2**2
 combinations of hyperparameter subspaces.
 """
-from sklearn.datasets import load_boston
+import sys
+sys.path.append("..")
+from sklearn.datasets import fetch_california_housing
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.model_selection import cross_val_score
 import numpy as np
 import argparse
 
-from hyperspace import hyperdrive
-from hyperspace.kepler import load_results
+import hyperspace.hyperdrive as hyperdrive
+
+#from hyperspace import hyperdrive
+#from .hyperspace.kepler import load_results
 
 
-boston = load_boston()
-X, y = boston.data, boston.target
+housing = fetch_california_housing()
+X, y = housing.data, housing.target
 n_features = X.shape[1]
 
 reg = GradientBoostingRegressor(n_estimators=50, random_state=0)
